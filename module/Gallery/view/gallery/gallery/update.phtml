@@ -1,0 +1,23 @@
+<?php
+use Gallery\Form\GalleryForm;
+use Gallery\Entity\Gallery;
+
+$gallery = $this->gallery; /* @var $gallery Gallery */
+
+$form = $this->form; /* @var $form GalleryForm */
+$form->prepare();
+$form->setAttribute(
+    'action',
+    $this->url('gallery/action', array('action' => 'update', 'id' => $gallery->getId()), true)
+);
+?>
+<h1>Bild ändern</h1>
+<?php
+echo $this->form()->openTag($form);
+foreach ($form as $element) {
+    echo '<div>' . $this->formRow($element) . '</div>';
+}
+echo $this->form()->closeTag();
+?>
+<hr>
+<a href="<?php echo $this->url('gallery') ?>">Gallery</a>

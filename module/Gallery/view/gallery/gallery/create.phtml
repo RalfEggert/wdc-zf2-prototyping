@@ -1,0 +1,20 @@
+<?php
+use Gallery\Form\GalleryForm;
+
+$form = $this->form; /* @var $form GalleryForm */
+$form->prepare();
+$form->setAttribute(
+    'action',
+    $this->url('gallery/action', array('action', 'create'), true)
+);
+?>
+<h1>Bild anlegen</h1>
+<?php
+echo $this->form()->openTag($form);
+foreach ($form as $element) {
+    echo '<div>' . $this->formRow($element) . '</div>';
+}
+echo $this->form()->closeTag();
+?>
+<hr>
+<a href="<?php echo $this->url('gallery') ?>">Gallery</a>

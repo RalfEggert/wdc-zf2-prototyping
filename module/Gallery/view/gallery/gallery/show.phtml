@@ -1,0 +1,28 @@
+<?php
+use Gallery\Entity\Gallery;
+
+$gallery = $this->gallery; /* @var $gallery Gallery */
+?>
+<h1>Bild anzeigen</h1>
+<table class="table">
+    <tbody>
+    <tr>
+        <td>ID</td>
+        <td><?php echo $gallery->getId(); ?></td>
+    </tr>
+    <tr>
+        <td>Title</td>
+        <td><?php echo $gallery->getTitle(); ?></td>
+    </tr>
+    <tr>
+        <td>ThumbUrl</td>
+        <td><?php echo $gallery->getThumburl(); ?></td>
+    </tr>
+    <tr>
+        <td>BigUrl</td>
+        <td><?php echo $gallery->getBigurl(); ?></td>
+    </tr>
+    </tbody>
+</table>
+<hr>
+<a href="<?php echo $this->url('gallery') ?>">Gallery</a>
